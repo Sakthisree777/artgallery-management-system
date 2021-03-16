@@ -1,0 +1,10 @@
+{% extends 'artgallery/base.html' %}
+{% block content %}
+    <h2>Customised product Detail</h2>
+    <form method="POST" class="post-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+<!--        <input type="submit" value="Apply" class="btn btn-primary">-->
+        <div class="text-center"><input type="submit"  value="Submit" class="btn btn-primary"></div>
+    </form>
+{% endblock %}
