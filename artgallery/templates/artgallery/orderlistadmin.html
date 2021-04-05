@@ -33,34 +33,58 @@
     </head>
 <body>
 <div>
-    <h2>Order List</h2>
+    <h2>  All Orders</h2>
     <table id="example" class="table table-hover">
         <thead>
         <tr>
-            <th>Customer Name</th>
-          <th>Width</th>
-            <th>Height</th>
-            <th>Quantity</th>
-            <th>Requirements</th>
-            <th>Painting type</th>
-            <th>Type</th>
+    <th>Customer Name</th>
+    <th>Order id</th>
+    <th>Date</th>
+    <th>Product code</th>
+    <th>Product name</th>
+    <th>Painting choice</th>
+    <th>Painting type</th>
+    <th>Width</th>
+    <th>Height</th>
+    <th>Price</th>
+    <th>Quantity</th>
+    <th>Total price</th>
+            <th>Status</th>
 
+</tr>
 
-        </tr>
         </thead>
         <tbody>
-       {% for custom in cust %}
+       {% for custom in admod %}
         <tr>
             <td>{{custom.customer.cus_name}}</td>
-          <td>{{custom.size_w}}</td>
-          <td>{{ custom.size_h}} </td>
-            <td>{{custom.quantity}} </td>
-            <td>{{ custom.requirements}} </td>
-            <td>{{ custom.painting_type}} </td>
-            <td>{{ custom.type_type}} </td>
+            <td>{{custom.order_id}}</td>
+            <td>{{custom.date}}</td>
+            <td>{{custom.p_code}}</td>
+            <td>{{custom.p_name}}</td>
+            <td>{{custom.p_painting_type}} </td>
+            <td>{{custom.p_type_type}} </td>
+            <td>{{custom.psize_w}}</td>
+            <td>{{custom.psize_h}} </td>
+            <td>{{custom.p_price}} </td>
+            <td>{{custom.p_quantity}} </td>
+            <td>{{custom.p_totalprice}} </td>
+            <td>{{custom.p_dispatcedstatus}} </td>
+            <td>
+                        {% if custom.status is none %}
+                        <form action="{% url "sendmail" %}" method="post">
+                            {% csrf_token %}
 
-
-
+                            <input type="text" value="{{ custom.order_id }}" name="orderid" hidden>
+                            <input type="text" value="accept" name="decision" hidden>
+                            <input type="submit" value="accept" class="btn btn-primary">
+                        </form>
+                        {% else %}
+                            The Order status is
+                            {{ custom.status }}
+                        {% endif %}
+            </td>
+                  <td><a href="{% url "updateorder" order_id=custom.order_id %}">Update order details</a></td>
 
 
         </tr>

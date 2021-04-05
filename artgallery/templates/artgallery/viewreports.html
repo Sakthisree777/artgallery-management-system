@@ -1,0 +1,39 @@
+{% extends "artgallery/base.html" %}
+{% block content %}
+<!--<body>-->
+<center>
+    <hr/>
+    <h2>  All Orders</h2>
+    From: <input type="date" name="fromdate"/>
+    To: <input type="date" name="todate"/>
+    <input type="submit" value="Search"/>
+    <hr/>
+    <table id="example" class="table table-hover">
+        <thead>
+        <tr>
+            <th>Purchase total</th>
+            <th>Sales Total</th>
+            <th>Profit</th>
+            <th>Loss</th>
+
+        </tr>
+        </thead>
+
+        <tbody>
+
+        <tr>
+            <td>{{ total }}</td>
+            <td>{{ total1 }}</td>
+
+            <td>{{ profit }}</td>
+
+            <td>{{ loss }}</td>
+
+
+
+        </tr>
+
+        </tbody>
+    </table>
+</center>
+{% endblock %}

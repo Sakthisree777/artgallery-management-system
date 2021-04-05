@@ -2,11 +2,32 @@
 {% extends 'artgallery/base.html' %}
 
 {% block content %}
+
+<div xmlns="http://www.w3.org/1999/html">
+
+    {% if submitted %}
+        <h1><font size="7"> We have recieved your order! We'll get back to you soon! </font></h1>
+    {% else %}
     <h2>Customised product Detail</h2>
     <form method="POST" class="post-form">
         {% csrf_token %}
-        {{ form.as_p }}
+        <div class="text-center">
+        <label  for="cus_name">Name: </label>
+        <input type="text" name="cus_name" placeholder="Enter registered name"><br><br>
+        <label for="mail_id">Mail ID: </label>
+        <input type="email" name="mail_id" placeholder="Enter Mail"><br><br>
+        <label  for="mobile">Mobile: </label>
+        <input type="integer" name="mobile" placeholder="Enter registered name"><br><br>
+        <label for="address">Address: </label>
+        <input type="text" name="address" placeholder="Enter address"><br><br>
+        <label for="dob">DOB: </label>
+        <input type="date" name="dob" placeholder="YYYY-MM-DD"><br><br>
+        </div>
 <!--        <input type="submit" value="Apply" class="btn btn-primary">-->
-        <div class="text-center"><input type="submit"  value="Submit" class="btn btn-primary"></div>
+        <div class="text-center"><input type="submit"  value="Submit" class="btn btn-warning">
+        </div>
     </form>
+    {% endif %}
+</div>
+
 {% endblock %}

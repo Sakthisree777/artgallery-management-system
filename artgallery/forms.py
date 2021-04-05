@@ -23,7 +23,7 @@ class customerForm(forms.ModelForm):
             )
 
 class customerdetailform(forms.ModelForm):
-    cus_name = forms.CharField(help_text='Same as you registered name')
+    cus_name = forms.CharField(help_text='Same as your registered name')
     class Meta:
         model = Customer
         fields = '__all__'
@@ -31,8 +31,24 @@ class customerdetailform(forms.ModelForm):
 class custproduct(forms.ModelForm):
     class Meta:
         model = Custpro
-        fields='__all__'
+        fields= '__all__'
 
+class ordersadmin(forms.ModelForm):
+    class Meta:
+        model = Orders
+        exclude = ('status',)
 
+class stockadmin(forms.ModelForm):
+    class Meta:
+        model = Stock
+        fields= '__all__'
 
+class purchaseadmin(forms.ModelForm):
+    class Meta:
+        model = Purchase
+        fields= '__all__'
 
+class reportadmin(forms.ModelForm):
+    class Meta:
+        model = Report
+        fields= '__all__'

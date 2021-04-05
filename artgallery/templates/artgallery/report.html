@@ -1,0 +1,48 @@
+{% extends "artgallery/base.html" %}
+{% block content %}
+<style>
+.container {
+  height: 600px;
+  position: relative;
+
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+</style>
+
+
+<div class="container">
+  <div class="center">
+     <h2>Report</h2>
+      {% if submitted %}
+        <h1>Thanks for registering, Please Log in!</h1>
+
+
+
+
+
+
+
+
+      {% else %}
+
+    <form method="POST" class="post-form">
+        {% csrf_token %}
+        <label  for="f_date">From Date: </label>
+        <input type="date" name="f_date" placeholder="From date"><br><br>
+        <label for="t_date">To Date: </label>
+        <input type="date" name="t_date" placeholder="To date"><br><br>
+<!--        <input type="Submit" value="Login" class="btn btn-primary">-->
+        <div class="text-center"><input type="submit"  value="Submit" class="btn btn-warning"></div>
+    </form>
+</div>
+</div>
+
+{% endblock %}

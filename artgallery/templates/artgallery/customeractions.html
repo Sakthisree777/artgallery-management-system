@@ -1,0 +1,14 @@
+{% extends "artgallery/base.html" %}
+{% block content %}
+<div>
+    <h1 style="text-align: left" class="display-3">Welcome,{{ user.username }}</h1>
+    <h2 style="text-align: left" class="display-3"><font size="7">Place your orders here! </font></h2>
+
+    <hr class="my-2">
+    <p>
+        <a class="btn btn-warning btn-lg" href="{% url "customisedproduct" %}" role="button">Customised Products</a>
+        <a class="btn btn-warning btn-lg" href="http://www.sriartgallery.com/" role="button">Direct Products</a>
+    </p>
+</div>
+
+{% endblock %}

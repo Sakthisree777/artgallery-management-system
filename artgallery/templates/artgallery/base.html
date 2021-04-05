@@ -23,7 +23,7 @@
 @import url(https://fonts.googleapis.com/css?family=Bree+Serif);
 
 body {
-	background: #212121;
+	background: rgb(255, 122, 89);
 	font-size:22px;
 	line-height: 32px;
 	color: #ffffff;
@@ -296,7 +296,7 @@ li > a:only-child:after { content: ''; }
 </head>
 <body>
           <nav>
-        <div id="logo">Art Gallery System</div>
+        <div id="logo">Sri Art Gallery</div>
 
         <label for="drop" class="toggle">Menu</label>
         <input type="checkbox" id="drop" />
@@ -315,6 +315,11 @@ li > a:only-child:after { content: ''; }
                          <a href="{% url "logout" %}">Logout</a>
                     </li>
                 {% else %}
+                    <li>
+                    <a href="{% url "home" %}">Home</a>
+
+
+                </li>
 
                     <li>
                     <a href="{% url "registercustomer" %}">Registration</a>
@@ -325,7 +330,7 @@ li > a:only-child:after { content: ''; }
                 <!-- First Tier Drop Down -->
               <li>
                     <!-- First Tier Drop Down -->
-                    <label for="drop-1" class="toggle">Login +</label>
+                    <label for="drop-1" class="toggle">Login </label>
                     <a href="#">Login</a>
                     <input type="checkbox" id="drop-1"/>
                     <ul>
@@ -337,9 +342,7 @@ li > a:only-child:after { content: ''; }
 
                 </li>
                 {% endif %}
-<!--                <li><a href="#">Hostel room details</a></li>-->
-<!--                <li><a href="#">Room Status</a></li>-->
-                <li><a href="#">About</a></li>
+                <li><a href="{% url "about" %}">About</a></li>
 
 
 

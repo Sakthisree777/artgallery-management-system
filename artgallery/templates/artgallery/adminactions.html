@@ -1,0 +1,53 @@
+{% extends "artgallery/base.html" %}
+{% block content %}
+<div>
+       <p>
+    <h1 style="text-align: left" class="display-3">Welcome, Admin</h1>
+
+    <hr class="my-2">
+
+    <br>
+    <div class="btn-group">
+    <button style="margin:15px;" type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    MyOrders </button>
+
+
+    <div class="dropdown-menu">
+        <a class="dropdown-item" href="{% url "orderinsert" %}">Admin Insert</a>
+        <a class="dropdown-item" href="{% url "orderlistadmin" %}">View inserted orders</a>
+        <a class="dropdown-item" href="{% url "orderlistcustomer" %}">View customer orders</a>
+    </div>
+
+        <div class="btn-group">
+    <button style="margin:15px;" type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Purchase </button>
+
+
+    <div class="dropdown-menu">
+        <a class="dropdown-item" href="{% url "purchaseinsert" %}">Raw materials Insert</a>
+        <a class="dropdown-item" href="{% url "purchaseview" %}">View Raw materials</a>
+
+    </div>
+
+            <div class="btn-group">
+    <button style="margin:15px;" type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Stock </button>
+
+
+    <div class="dropdown-menu">
+        <a class="dropdown-item" href="{% url "stockinsert" %}">Stock Insert</a>
+        <a class="dropdown-item" href="{% url "stockview" %}">View Stock</a>
+
+    </div>
+
+    <div>
+       <a style="margin:15px;" class="btn btn-warning btn-lg" href="{% url "adminsales" %}" role="button">Sales Details</a>
+    </div>
+                <div>
+       <a style="margin:15px;" class="btn btn-warning btn-lg" href="{% url "viewreports" %}" role="button">Report</a>
+    </div>
+    </div>
+    </p>
+</div>
+
+{% endblock %}
